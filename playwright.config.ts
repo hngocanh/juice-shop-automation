@@ -20,16 +20,13 @@ export default defineConfig({
   },
   projects: [
     {
+      name: 'api',
+      testMatch: 'tests/api/**/*.spec.ts',
+    },
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      testMatch: 'tests/ui/**/*.spec.ts',
     },
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
-  ],
+  ]
 });

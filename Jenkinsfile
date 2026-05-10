@@ -39,11 +39,11 @@ pipeline {
                 sh 'npm run test:api'
             }
         }
-        
+
         stage('Run UI Tests') {
             steps {
                 echo 'Running UI tests...'
-                sh 'npm run test:ui'
+                sh 'npm run test:ui -- --reporter=html'
             }
         }
     }
