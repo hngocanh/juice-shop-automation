@@ -33,17 +33,10 @@ pipeline {
             }
         }
 
-        stage('Run API Tests') {
+        stage('Run Playwright Tests') {
             steps {
-                echo 'Running API tests...'
-                sh 'npm run test:api'
-            }
-        }
-
-        stage('Run UI Tests') {
-            steps {
-                echo 'Running UI tests...'
-                sh 'npm run test:ui -- --reporter=html'
+                echo 'Running API + UI tests...'
+                sh 'npm test'
             }
         }
     }
