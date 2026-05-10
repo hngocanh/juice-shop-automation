@@ -69,5 +69,5 @@ pipeline {
         failure {
             echo 'Tests failed — check the Playwright report above.'
         }
-}
+    }
 }
