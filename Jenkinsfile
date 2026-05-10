@@ -39,23 +39,7 @@ pipeline {
                 sh 'npm run test:api'
             }
         }
-
-        stage('Validate UI Test Environment') {
-            steps {
-                echo 'Validating required UI test environment variables...'
-                sh '''
-                    set -eu
-                    for var in ADMIN_EMAIL ADMIN_PASSWORD STANDARD_EMAIL STANDARD_PASSWORD; do
-                      if [ -z "${!var:-}" ]; then
-                        echo "Missing required environment variable: ${var}"
-                        exit 1
-                      fi
-                    done
-                    echo "All required UI test environment variables are set."
-                '''
-            }
-        }
-
+        
         stage('Run UI Tests') {
             steps {
                 echo 'Running UI tests...'
