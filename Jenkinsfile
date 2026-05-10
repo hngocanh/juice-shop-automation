@@ -55,7 +55,7 @@ pipeline {
         always {
             echo 'Publishing Playwright HTML report...'
             publishHTML(target: [
-                allowMissing         : false,
+                allowMissing         : true,        // ← change false to true
                 alwaysLinkToLastBuild: true,
                 keepAll              : true,
                 reportDir            : 'playwright-report',
@@ -69,5 +69,5 @@ pipeline {
         failure {
             echo 'Tests failed — check the Playwright report above.'
         }
-    }
+}
 }
